@@ -1,16 +1,17 @@
 "use strict";
 
-var fs = require('fs');
-var path = require('path');
-var router = require('express').Router();
+let fs = require('fs');
+let path = require('path');
+let router = require('express').Router();
+let nconf = require('nconf');
 
-function templates(req, res) {
-  var filePath = path.join(app.get('clientDir'), req.url.replace('.html', '.jade'));
+function templates(req, res, next) {
+	let clientDir = nconf.get('clientDir');
+  let filePath = path.join(clientDir, req.url.replace('.html', '.jade'));
 
 	fs.exists(filePath, function(yes) {
 		if (yes) {
 			res.render(filePath, {
-				hostname: app.get('hostname'),
 				doctype:'html'
 			});
 		}
@@ -20,6 +21,6 @@ function templates(req, res) {
 	});
 }
 
-router.use('/*.html', templates);
+router.get('/*.html', templates);
 
 module.exports = router;

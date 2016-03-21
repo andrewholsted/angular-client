@@ -1,22 +1,16 @@
-var APP_MODULE = angular.module('angular-demo', [
+var APP_MODULE = angular.module('angular-client', [
 	'ui.router',
 	'templates-app',
 	])
-
-	.constant('Config', {
-		debug: true
-	})
-
 	.config(function() {
 		
 	})
 
 	.run([
 		'$rootScope',
-		'Util',
-		function($rootScope, Util){
+		function($rootScope){
 
-			function stateChangeStart(event, toState, toParams, fromState, fromParams)
+			function stateChangeStart(event, toState, toParams, fromState, fromParams){
 			
 			}
 
