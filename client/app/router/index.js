@@ -4,10 +4,7 @@ APP_MODULE
     '$stateProvider',
     function($locationProvider, $stateProvider) {
 
-      $locationProvider.html5Mode({
-        enabled: true,
-        base: false
-      });
+      $locationProvider.html5Mode(true);
 
       $stateProvider
         .state('index', {

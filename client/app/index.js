@@ -1,5 +1,6 @@
 var APP_MODULE = angular.module('angular-client', [
 	'ui.router',
+	'ui.bootstrap',
 	'templates-app',
 	])
 	.config(function() {

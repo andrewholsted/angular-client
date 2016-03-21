@@ -3,5 +3,5 @@
 if [ "${NODE_ENV}" == "production" ]; then
   node ./core/server.js
 else
- nodemon -w ./client -w ./server index.js
+ nodemon -w ./client -w ./server -e js,jade index.js
 fi
