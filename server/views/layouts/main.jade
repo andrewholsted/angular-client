@@ -1,20 +1,25 @@
 doctype html
 html
-	head
-		title= title
-		meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
-		meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
-		base(href="/")
+  head
+    title= title
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+    base(href="/")
 
-		- each path in paths.css
-			link(rel="stylesheet", href="#{path}", media="screen, projection")
+    - each path in paths.css
+      link(rel="stylesheet", href="#{path}", media="screen, projection")
 
-	body(ng-app="angular-client", window-resize="true", flow-prevent-drop)
+  body(ng-app="angular-client", window-resize="true", flow-prevent-drop)
 
-		block content
+    block content
 
-		script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js")
 
-		- each path in paths.js
-			script(type="text/javascript", src="#{path}")
+    - each path in paths.js
+      script(type="text/javascript", src="#{path}")
+    
+    script.
+      APP_MODULE.constant('config', {
+        platformUrl: '#{platformUrl}'
+      });

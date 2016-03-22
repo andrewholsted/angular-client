@@ -2,7 +2,8 @@ APP_MODULE
 	.controller('IndexCtrl', [
 		'$scope',
 		'$state',
-		function ($scope, $state) {
-      console.log('test');
+    'API',
+		function ($scope, $state, API) {
+    
 		}
 	]);
